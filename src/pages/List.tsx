@@ -53,7 +53,27 @@ const List = () => {
   };
 
   const filterTx = (dateFrom: string, dateTo: string, retailer: string): void => {
-    console.log(dateFrom, dateTo, retailer);
+    let tmp = rows.filter(row => row.Retailer.includes(retailer));
+    
+    let from = Date.parse(dateFrom);
+    let to = Date.parse(dateTo);
+
+    if (Number.isNaN(from)) from = -8640000000000000;
+    if (Number.isNaN(to)) to = 8640000000000000;
+
+    tmp = tmp.filter(row => {
+      let temp = "";
+
+      const dt  = row.Date.substring(0,2);
+      const mon = row.Date.substring(3,5);
+      const yr  = row.Date.substring(6,10);  
+
+      temp = mon + "/" + dt + "/" + yr;
+      
+      const date = Date.parse(temp);
+      
+      return from < date && date < to;
+    });
   };
 
   return (

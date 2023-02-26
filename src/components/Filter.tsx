@@ -5,7 +5,6 @@ import Grid from "@mui/system/Unstable_Grid/Grid";
 import { Button } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-
 const Filter = ({ filterTx }: { filterTx: any}) => {
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");

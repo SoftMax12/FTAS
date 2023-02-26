@@ -5,7 +5,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
-function BasicDatePicker( {isSmall, label="Date"}: {isSmall?: boolean, label?: string} ) {
+function BasicDatePicker( {isSmall, label="Date", uploadDate}: {isSmall?: boolean, label?: string, uploadDate:any} ) {
   const [value, setValue] = React.useState<Dayjs | null>(null);
 
   return (
@@ -15,6 +15,7 @@ function BasicDatePicker( {isSmall, label="Date"}: {isSmall?: boolean, label?: s
         value={value}
         onChange={(newValue) => {
           setValue(newValue);
+          uploadDate(newValue);
         }}
         renderInput={(params) => <TextField size={isSmall?"small":"medium"} {...params} />}
       />

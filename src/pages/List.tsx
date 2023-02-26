@@ -4,8 +4,11 @@ import InputForm from "../components/InputForm";
 import DataList from "../components/DataList";
 import Filter from "../components/Filter";
 import { Card } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const List = () => {
+const List = ({uploadResults}: {uploadResults: any}) => {
+  const navigate = useNavigate();
+
   const [ rows, setRows ] = useState([
     {
       id: 1,
@@ -74,6 +77,9 @@ const List = () => {
       
       return from < date && date < to;
     });
+
+    uploadResults(tmp);
+    navigate("/results");
   };
 
   return (

@@ -20,16 +20,16 @@ const Filter = ({ filterTx }: { filterTx: any}) => {
 
   return (
     <Grid container spacing={2}>
-      <Grid xs={3}>
+      <Grid xl={3} lg={3} md={3} sm={4} xs={6}>
         <BasicDatePicker label="Date From" uploadDate={uploadDateFrom} />
       </Grid>
-      <Grid xs={3}>
+      <Grid xl={3} lg={3} md={3} sm={4} xs={6}>
         <BasicDatePicker label="Date To" uploadDate={uploadDateTo} />
       </Grid>
-      <Grid xs={3}>
+      <Grid xl={3} lg={3} md={3} sm={4} xs={12}>
         <TextField id="standard-basic" label="Retailer" variant="outlined" onChange={(e) => setRetailer(e.target.value)} />
       </Grid>
-      <Grid xs={3}>
+      <Grid xl={3} lg={3} md={3} sm={12} xs={12}>
         <Button color="success" disabled={false} size="large" variant="contained" endIcon={<Search/>} onClick={() => filterTx(dateFrom, dateTo, retailer)}>Search</Button>
       </Grid>
     </Grid>

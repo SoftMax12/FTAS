@@ -17,19 +17,19 @@ const InputForm = ({ createTx }: { createTx: any}) => {
   
   return (
     <Grid container spacing={2}>
-      <Grid xs={2}>
+      <Grid xl={2} lg={2} md={4} sm={4} xs={5}>
         <TextField id="standard-basic" label="ID" variant="outlined" size="small" onChange={(e) => setId(e.target.value)} />
       </Grid>
-      <Grid xs={3}>
+      <Grid xl={3} lg={3} md={8} sm={8} xs={7}>
         <BasicDatePicker isSmall={true} uploadDate={uploadDate} />
       </Grid>
-      <Grid xs={2}>
+      <Grid xl={2} lg={2} md={4} sm={4} xs={5}>
         <TextField id="standard-basic" label="Amount" variant="outlined" size="small" onChange={(e) => setAmount(e.target.value)} type="number" />
       </Grid>
-      <Grid xs={3}>
+      <Grid xl={3} lg={3} md={4} sm={4} xs={7}>
         <TextField id="standard-basic" label="Retailer" variant="outlined" size="small" onChange={(e) => setRetailer(e.target.value)} />
       </Grid>
-      <Grid xs={2}>
+      <Grid xl={2} lg={2} md={4} sm={4} xs={12}>
         <Button disabled={false} size="large" variant="contained" startIcon={<Create/>} onClick={() => createTx(id, date, parseFloat(amount), retailer)}>Create</Button>
       </Grid>
     </Grid>
